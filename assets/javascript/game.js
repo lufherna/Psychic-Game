@@ -6,20 +6,19 @@ var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l",
 var numberOfGuesses = 10;
 var wins = 0;
 var losses = 0;
+var pressedKeys = [];
 
 //for loop
 
-for (var i = 0; i < alphabet.length; i++) {
-
-document.onkeyup = function runProgram(event){
+	document.onkeyup = function runProgram(event){
 	var userGuess = event.key;
 	var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+
 
 //if user guesses right
 	if(userGuess === computerGuess){
 		wins++;
-		runProgram();
-			}
+				}
 
 //if user guesses wrong
 	if(userGuess !== computerGuess) {
@@ -28,13 +27,11 @@ document.onkeyup = function runProgram(event){
 		numberOfGuesses--;
 	}
 //if user loses all his guesses
-	if(numberOfGuesses===0) {
+	if(numberOfGuesses === 0) {
 
 		alert("Game Over Joker");
-		runProgram();
 
 	}
-
 	var holder = document.getElementById('user-wins');
 	holder.innerHTML = wins;
 	holder = document.getElementById('user-losses');
@@ -42,8 +39,8 @@ document.onkeyup = function runProgram(event){
 	holder = document.getElementById('guesses-left');
 	holder.innerHTML = numberOfGuesses;
 	holder = document.getElementById('lettersGuessed');
-	holder.innerHTML = userGuess;
+	pressedKeys.push(userGuess);
+	holder.innerHTML = pressedKeys;
 
 }
 
-}
