@@ -11,13 +11,14 @@ var losses = 0;
 
 for (var i = 0; i < alphabet.length; i++) {
 
-document.onkeyup = function(event){
+document.onkeyup = function runProgram(event){
 	var userGuess = event.key;
 	var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 //if user guesses right
 	if(userGuess === computerGuess){
 		wins++;
+		runProgram();
 			}
 
 //if user guesses wrong
@@ -30,6 +31,7 @@ document.onkeyup = function(event){
 	if(numberOfGuesses===0) {
 
 		alert("Game Over Joker");
+		runProgram();
 
 	}
 
