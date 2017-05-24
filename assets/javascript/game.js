@@ -40,7 +40,7 @@ var pressedKeys = [];
 	holder.innerHTML = numberOfGuesses;
 	holder = document.getElementById('lettersGuessed');
 	pressedKeys.push(userGuess);
-	holder.innerHTML = pressedKeys;
+	holder.innerHTML = pressedKeys + ' ';
 
 }
 
