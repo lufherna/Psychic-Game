@@ -32,6 +32,7 @@ document.onkeyup = function runProgram(event){
 			//if user guesses right
 		if(userGuess === computerGuess){
 			wins++;
+			pressedKeys = [];
 			
 		
 			newRandom();
@@ -41,6 +42,7 @@ document.onkeyup = function runProgram(event){
 		if(userGuess !== computerGuess) {
 		
 			numberOfGuesses--;
+
 		}
 
 		//varibles that hold values and will change the innerHTML on the DOM
@@ -61,9 +63,11 @@ document.onkeyup = function runProgram(event){
 
 		losses++
 		alert("Game Over Joker");
+		pressedKeys = [];
 		numberOfGuesses = 10;
-		newRandom()
+		newRandom();
 		runProgram();
+		
 	}
 
 
