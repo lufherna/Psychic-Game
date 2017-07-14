@@ -1,2 +1,2 @@
 # Psychic-Game
-Recommended HW Week 2
+Try to guess what letter the computer is thinking of and see if you can beat it!
